@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Tasklist from './components/Tasklist.js';
-import Taskform from './components/Taskform.js'
+import TaskList from './components/TaskList.js';
+import TaskForm from './components/TaskForm.js'
 
 class App extends Component {
   state = {
@@ -21,12 +21,20 @@ class App extends Component {
       tasks:filteredState
     })
   }
+  editTask = (taskId, taskValue) => {
+    console.log('taskid', taskId)
+    console.log('taskvalue', taskValue)
+    let newStateArray = this.state.tasks
+    newStateArray[taskId] = taskValue
+    this.setState({
+      tasks:newStateArray
+    })
+  }
   render() {
     return (
       <div className="App">
-        <Taskform updateStateFunc={this.updateState}/>
-        <Tasklist allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
-
+        <TaskForm updateStateFunc={this.updateState}/>
+        <TaskList allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} editTaskFunc={this.editTask}/>
       </div>
     );
   }

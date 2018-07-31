@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Taskform extends Component {
+class TaskForm extends Component {
   state = {
     task:''
   }
@@ -12,7 +12,7 @@ class Taskform extends Component {
           this.props.updateStateFunc(this.state.task)
           this.state.task = ''
         }}>
-          <input placeholder="Add New Task Here and Press Enter" onChange={(event) => {this.setState({task:event.target.value})}} value={this.state.task}></input>
+          <input placeholder="Add Task" onChange={(event) => {this.setState({task:event.target.value})}} value={this.state.task}></input>
         </form>
       </div>
     );
@@ -20,4 +20,4 @@ class Taskform extends Component {
 
 }
 
-export default Taskform;
+export default TaskForm;

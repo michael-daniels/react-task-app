@@ -1,10 +1,9 @@
 import React from 'react';
-import Singletask from './Singletask.js'
+import SingleTask from './SingleTask.js'
 
-const Tasklist = (props) => {
-  console.log('TESTING', props)
+const TaskList = (props) => {
   let singleTask = props.allTasks.map((item, idx) => {
-    return <Singletask key={idx} id={idx} theTask={item} deleteTaskFunc={props.deleteTaskFunc}/>
+    return <SingleTask key={idx} id={idx} theTask={item} deleteTaskFunc={props.deleteTaskFunc} editTaskFunc={props.editTaskFunc}/>
   })
   return (
     <div>
@@ -13,4 +12,4 @@ const Tasklist = (props) => {
   )
 }
 
-export default Tasklist;
+export default TaskList;

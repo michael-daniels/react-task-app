@@ -24,11 +24,24 @@ button {
   border-radius:5px;
   box-shadow:1px 1px 6px 1px silver
 }
-.single-task-x {
+.single-task-delete {
   float:right;
   color:red;
+  font-size: 14px;
+  margin:0 10px;
 }
-.single-task-x:hover {
+.single-task-delete:hover {
   cursor:pointer;
-
 }
+.single-task-edit {
+  float:right;
+  color:red;
+  font-size: 14px;
+  margin:0 10px;
+}
+.single-task-edit:hover {
+  cursor:pointer;
+}
+/* .edit-form {
+  display:none;
+} */
